@@ -1,0 +1,20 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo__link {
+  text-decoration: none;
+}
+
+.logo__text {
+  font-size: 1.25rem;
+  line-height: 1.15;
+
+  color: #ffffff;
+}
+
+.logo span {
+  color: #63b3ed;
+}
