@@ -1,11 +1,7 @@
-.logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .logo__link {
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .logo__text {
@@ -15,6 +11,6 @@
   color: #ffffff;
 }
 
-.logo span {
+.logo__text span {
   color: #63b3ed;
 }

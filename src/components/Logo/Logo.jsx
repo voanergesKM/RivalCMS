@@ -5,14 +5,12 @@ import styles from './Logo.module.css';
 
 export const Logo = () => {
   return (
-    <div className={styles.logo}>
+    <Link className={styles.logo__link} to="/">
       <LogoIcon className={styles.logo__icon} size={42} />
-      <Link className={styles.logo__link} to="/">
-        <p className={styles.logo__text}>
-          Rival
-          <span>CMS</span>
-        </p>
-      </Link>
-    </div>
+      <p className={styles.logo__text}>
+        Rival
+        <span>CMS</span>
+      </p>
+    </Link>
   );
 };
