@@ -154,6 +154,14 @@
   margin: 0 auto;
 }
 
+.footer__list {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .footer__link {
   text-decoration: none;
   padding: 0.5rem 0rem;
@@ -163,10 +171,6 @@
   color: #fffcfe;
 
   transition: all 250ms linear;
-}
-
-.footer__link:not(:last-child) {
-  margin-right: 3.1875rem;
 }
 
 .footer__link:hover,

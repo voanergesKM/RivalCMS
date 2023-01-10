@@ -50,14 +50,18 @@ export const HomePage = () => {
       </main>
       <footer className={style.footer}>
         <nav className={style.footer__container}>
-          <div style={{ marginRight: '4.375rem' }}>
+          <ul className={style.footer__list}>
             {links.map(({ title, href }) => (
-              <Link key={title} className={style.footer__link} to={href}>
-                {title}
-              </Link>
+              <li key={title}>
+                <Link className={style.footer__link} to={href}>
+                  {title}
+                </Link>
+              </li>
             ))}
-          </div>
-          <Logo />
+            <li>
+              <Logo />
+            </li>
+          </ul>
         </nav>
       </footer>
     </div>
