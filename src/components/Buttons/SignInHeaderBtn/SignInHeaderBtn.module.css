@@ -1,0 +1,35 @@
+.button {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.625rem 1.562rem;
+  border: 2px solid #f7fafc;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  line-height: 1.15;
+
+  transition: all 250ms linear;
+}
+
+.button:hover,
+.button:focus {
+  color: #4299e1;
+  border-color: #4299e1;
+}
+
+.main {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.625rem 1.562rem;
+  border: 2px solid #f7fafc;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  line-height: 1.15;
+
+  transition: all 250ms linear;
+}
+
+.main:hover,
+.main:focus {
+  color: #2d3748;
+  border-color: #2d3748;
+}
