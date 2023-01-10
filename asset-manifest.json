@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rival-cms/static/css/main.0c313f7a.css",
+    "main.js": "/rival-cms/static/js/main.037c1967.js",
+    "static/media/feature.jpg": "/rival-cms/static/media/feature.369061d9372c153207af.jpg",
+    "static/media/hero.png": "/rival-cms/static/media/hero.8041a9cce78980aabd31.png",
+    "index.html": "/rival-cms/index.html",
+    "main.0c313f7a.css.map": "/rival-cms/static/css/main.0c313f7a.css.map",
+    "main.037c1967.js.map": "/rival-cms/static/js/main.037c1967.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c313f7a.css",
+    "static/js/main.037c1967.js"
+  ]
+}
