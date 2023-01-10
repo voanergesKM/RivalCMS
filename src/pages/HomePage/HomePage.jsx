@@ -6,7 +6,7 @@ import heroImg from '../../assets/images/hero.png';
 import { Logo } from '../../components/Logo/Logo';
 
 const links = [
-  { title: 'Register', href: '#' },
+  { title: 'Register', href: '/register' },
   { title: 'Terms & conditions', href: '#' },
   { title: 'Privacy policy', href: '#' },
   { title: 'Documentation', href: '#' },
@@ -25,7 +25,7 @@ export const HomePage = () => {
           <Link className={style.nav__link} to="#">
             About
           </Link>
-          <Link className={style.nav__btn} to="/">
+          <Link className={style.nav__btn} to="/login">
             Sign In
           </Link>
         </nav>
@@ -38,7 +38,7 @@ export const HomePage = () => {
               Rival<span>CMS</span>
             </p>
             <h1 className={style.hero__title}>Fresh new way to build sites</h1>
-            <Link className={style.hero__btn} to="/">
+            <Link className={style.hero__btn} to="/login">
               Get started free
             </Link>
             <p className={style.hero__description}>*no card needed</p>
