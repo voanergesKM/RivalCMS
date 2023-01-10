@@ -4,6 +4,7 @@ import style from './HomePage.module.css';
 import featureImg from '../../assets/images/feature.jpg';
 import heroImg from '../../assets/images/hero.png';
 import { Logo } from '../../components/Logo/Logo';
+import { SignInHeaderBtn } from '../../components/Buttons/SignInHeaderBtn/SignInHeaderBtn';
 
 const links = [
   { title: 'Register', href: '/register' },
@@ -19,15 +20,21 @@ export const HomePage = () => {
     <div className={style.container}>
       <header className={style.header}>
         <nav className={style.nav}>
-          <Link className={style.nav__link} to="#">
-            Pricing
-          </Link>
-          <Link className={style.nav__link} to="#">
-            About
-          </Link>
-          <Link className={style.nav__btn} to="/login">
-            Sign In
-          </Link>
+          <ul>
+            <li>
+              <Link className={style.nav__link} to="#">
+                Pricing
+              </Link>
+            </li>
+            <li>
+              <Link className={style.nav__link} to="#">
+                About
+              </Link>
+            </li>
+            <li>
+              <SignInHeaderBtn variant="main" />
+            </li>
+          </ul>
         </nav>
       </header>
       <main>
@@ -50,14 +57,18 @@ export const HomePage = () => {
       </main>
       <footer className={style.footer}>
         <nav className={style.footer__container}>
-          <div style={{ marginRight: '4.375rem' }}>
+          <ul className={style.footer__list}>
             {links.map(({ title, href }) => (
-              <Link key={title} className={style.footer__link} to={href}>
-                {title}
-              </Link>
+              <li key={title}>
+                <Link className={style.footer__link} to={href}>
+                  {title}
+                </Link>
+              </li>
             ))}
-          </div>
-          <Logo />
+            <li>
+              <Logo />
+            </li>
+          </ul>
         </nav>
       </footer>
     </div>
