@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/RivalCMS/static/css/main.924992f1.css",
-    "main.js": "/RivalCMS/static/js/main.71bdedba.js",
+    "main.js": "/RivalCMS/static/js/main.cb980a36.js",
     "static/media/feature.jpg": "/RivalCMS/static/media/feature.369061d9372c153207af.jpg",
     "static/media/hero.png": "/RivalCMS/static/media/hero.8041a9cce78980aabd31.png",
     "index.html": "/RivalCMS/index.html",
     "main.924992f1.css.map": "/RivalCMS/static/css/main.924992f1.css.map",
-    "main.71bdedba.js.map": "/RivalCMS/static/js/main.71bdedba.js.map"
+    "main.cb980a36.js.map": "/RivalCMS/static/js/main.cb980a36.js.map"
   },
   "entrypoints": [
     "static/css/main.924992f1.css",
-    "static/js/main.71bdedba.js"
+    "static/js/main.cb980a36.js"
   ]
 }
