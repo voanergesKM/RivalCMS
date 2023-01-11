@@ -1,63 +1,43 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import { Formik, Form } from 'formik';
 import styles from './Form.module.css';
 import { LockIcon, MailIcon } from '../../assets/icons/SvgIcons';
 import { Link } from 'react-router-dom';
+import { Input } from './FormInput';
+import { LoginSchema } from './Validation';
+
+const initialValues = { email: '', password: '' };
 
 export const LoginForm = () => {
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      password: '',
-    },
-
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
-
   return (
     <div>
       <p className={styles.title}>
         Rival<span>CMS</span>
       </p>
+
       <div className={styles.form}>
-        <form onSubmit={formik.handleSubmit}>
-          <div className={styles.form__wrapper}>
-            <label className={styles.form__label} htmlFor="email">
-              <MailIcon size={24} />
-              Email address
-            </label>
-            <input
-              className={styles.form__input}
-              id="email"
-              name="email"
-              type="email"
-              onChange={formik.handleChange}
-              value={formik.values.email}
-            />
-          </div>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={LoginSchema}
+          validateOnBlur={false}
+          validateOnChange={false}
+          onSubmit={(values, actions) => {
+            console.log('LoginForm : actions', actions);
+            console.log('LoginForm : values', values);
+            actions.resetForm();
+          }}
+        >
+          <Form>
+            <Input name="email" label="Email address" icon={MailIcon} iconSize="24" type="email" />
 
-          <div className={styles.form__wrapper} style={{ marginBottom: '2.6875rem' }}>
-            <label className={styles.form__label} htmlFor="password">
-              <LockIcon size={24} />
-              Password
-            </label>
-            <input
-              className={styles.form__input}
-              id="password"
-              name="password"
-              type="text"
-              onChange={formik.handleChange}
-              value={formik.values.password}
-            />
-          </div>
+            <Input name="password" label="Password" icon={LockIcon} iconSize="24" type="password" />
 
-          <div className={styles.form__actions}>
-            <p>Forgot password?</p>
-            <button type="submit">Sign in</button>
-          </div>
-        </form>
+            <div className={styles.form__actions}>
+              <p>Forgot password?</p>
+              <button type="submit">Sign in</button>
+            </div>
+          </Form>
+        </Formik>
 
         <Link className={styles.registerBtn} to="/register">
           Don't have & account?
