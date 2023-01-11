@@ -1,0 +1,29 @@
+.header {
+  padding: 0.9375rem 2.375rem 0.9375rem 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2d3748;
+}
+
+.userInfo {
+}
+
+.userInfo__badge {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.2;
+
+  padding: 0.4375rem 0.6875rem 0.4375rem 0.875rem;
+
+  color: #fffcfe;
+  background: #ed64a6;
+  border-radius: 0.3125rem;
+}
+
+.userInfo__avatar {
+  width: 3.125rem;
+  height: 3.125rem;
+
+  border-radius: 50%;
+}
