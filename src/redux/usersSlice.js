@@ -20,7 +20,7 @@ export const signInUserSlice = createSlice({
   initialState: { name: '', email: '', isLoggedIn: false, isAdmin: false },
 
   reducers: {
-    signInUser(action) {
+    signInUser(_, action) {
       //   const admin = Math.random() > 0.5;
       const { name, email } = action.payload;
 
