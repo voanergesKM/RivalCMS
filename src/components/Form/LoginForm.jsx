@@ -27,7 +27,7 @@ export const LoginForm = () => {
     }
 
     dispatch(signInUser(confirmedUser));
-    navigate('/user');
+    navigate('/view');
     actions.resetForm();
   };
 
