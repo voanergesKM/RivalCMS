@@ -7,7 +7,6 @@ export const Input = ({ name, label, icon: Icon, iconSize, ...props }) => {
   return (
     <div className={styles.form__wrapper}>
       <label className={styles.form__label} htmlFor={field.name}>
-        {/* {Icon} */}
         <Icon size={iconSize} />
         {label}
       </label>
