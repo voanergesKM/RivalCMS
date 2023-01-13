@@ -3,7 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 export const authorizationSlice = createSlice({
   name: 'users',
 
-  initialState: [],
+  initialState: [
+    {
+      id: 1673523146112,
+      name: 'Wednesday Adams',
+      email: 'adams.wd@mail.com',
+      password: 'Adams!123wednesday',
+    },
+  ],
 
   reducers: {
     registerUser(state, action) {
