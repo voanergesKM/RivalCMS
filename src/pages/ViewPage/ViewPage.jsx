@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { AddFileIcon, MoreIcon } from '../../assets/icons/SvgIcons';
+import { AddFileIcon } from '../../assets/icons/SvgIcons';
 import { UserLayout } from '../../components/UserLayout/UserLayout';
-import { msToTime } from '../../utils/convertMs';
+import { ViewPageListItem } from '../../components/ViewPageListItem/ViewPageListItem';
 import styles from './ViewPage.module.css';
 
 export const ViewPage = () => {
   const pages = useSelector(state => state.sitePages);
+  const [sortedPages, setSortedPages] = useState(() => JSON.parse(JSON.stringify(pages)));
 
-  const currentDate = Date.now();
+  const handleFilterClick = filterBy =>
+    setSortedPages(structuredClone(pages).sort((a, b) => (a[filterBy] > b[filterBy] ? 1 : -1)));
 
   return (
     <UserLayout>
@@ -17,22 +19,38 @@ export const ViewPage = () => {
         <div className={styles.sortBar}>
           <ul className={styles.sortBar__list}>
             <li className={styles.sortBar__item}>
-              <button type="button" className={styles.sortBar__btn}>
+              <button
+                onClick={() => handleFilterClick('pageName')}
+                type="button"
+                className={styles.sortBar__btn}
+              >
                 Page title
               </button>
             </li>
             <li className={styles.sortBar__item}>
-              <button type="button" className={styles.sortBar__btn}>
+              <button
+                onClick={() => handleFilterClick('created')}
+                type="button"
+                className={styles.sortBar__btn}
+              >
                 Created
               </button>
             </li>
             <li className={styles.sortBar__item}>
-              <button type="button" className={styles.sortBar__btn}>
+              <button
+                onClick={() => handleFilterClick('published')}
+                type="button"
+                className={styles.sortBar__btn}
+              >
                 Status
               </button>
             </li>
             <li className={styles.sortBar__item}>
-              <button type="button" className={styles.sortBar__btn}>
+              <button
+                onClick={() => handleFilterClick('authorName')}
+                type="button"
+                className={styles.sortBar__btn}
+              >
                 Author
               </button>
             </li>
@@ -43,34 +61,8 @@ export const ViewPage = () => {
           </Link>
         </div>
         <ul className={styles.pagesList}>
-          {pages.map(({ id, pageName, created, published, authorName, isAdmin }) => (
-            <li key={id} className={styles.pagesList__item}>
-              <p className={styles.pagesList__item__title}>{pageName}</p>
-              <p className={styles.pagesList__item__created}>{msToTime(created, currentDate)}</p>
-              <p
-                className={
-                  published
-                    ? styles.pagesList__item__badge
-                    : styles.pagesList__item__badgeUunpublished
-                }
-              >
-                {published ? 'Published' : 'Unpublished'}
-              </p>
-              <div className={styles.pagesList__item__authorWrapper}>
-                <p className={styles.pagesList__item__author}>{authorName}</p>
-                {isAdmin && <span className={styles.pagesList__item__bageAdmin}>Admin</span>}
-              </div>
-              <div
-                style={{
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginLeft: 'auto',
-                }}
-              >
-                <MoreIcon size={24} />
-              </div>
-            </li>
+          {sortedPages.map(item => (
+            <ViewPageListItem key={item.id} item={item} />
           ))}
         </ul>
       </div>
