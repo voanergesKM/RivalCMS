@@ -55,7 +55,16 @@ export const addPageSlice = createSlice({
 
       return [...state, { id, pageName, created, published, authorName, isAdmin }];
     },
+
+    changePageStatus(state, action) {
+      for (const page of state) {
+        if (page.id === action.payload) {
+          page.published = !page.published;
+          break;
+        }
+      }
+    },
   },
 });
 
-export const { addSitePage } = addPageSlice.actions;
+export const { addSitePage, changePageStatus } = addPageSlice.actions;

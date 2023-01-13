@@ -8,10 +8,18 @@ import styles from './ViewPage.module.css';
 
 export const ViewPage = () => {
   const pages = useSelector(state => state.sitePages);
-  const [sortedPages, setSortedPages] = useState(() => JSON.parse(JSON.stringify(pages)));
+  const [sortedPages, setSortedPages] = useState(pages);
 
-  const handleFilterClick = filterBy =>
-    setSortedPages(structuredClone(pages).sort((a, b) => (a[filterBy] > b[filterBy] ? 1 : -1)));
+  const handleFilterClick = filterBy => {
+    setSortedPages(
+      structuredClone(pages).sort((a, b) => {
+        if (filterBy === 'created' || filterBy === 'published') {
+          return a[filterBy] > b[filterBy] ? -1 : 1;
+        }
+        return a[filterBy] > b[filterBy] ? 1 : -1;
+      })
+    );
+  };
 
   return (
     <UserLayout>
