@@ -1,0 +1,90 @@
+.pagesList__item {
+  padding: 2.1875rem 3.125rem 2.0625rem 2.1875rem;
+  background-color: #f7fafc;
+
+  display: flex;
+  align-items: center;
+}
+
+.pagesList__item__title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.167;
+
+  color: #2a4365;
+
+  width: 13.9375rem;
+}
+
+.pagesList__item__created {
+  font-size: 0.875rem;
+  line-height: 1.143;
+  color: #2a4365;
+
+  width: 14.6875rem;
+}
+
+.pagesList__item__badge {
+  font-size: 1rem;
+  line-height: 1.187;
+  color: #ffffff;
+  width: 8.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.4375rem 0rem;
+  margin-right: 6.25rem;
+
+  background: #9ae6b4;
+  border: 2px solid #9ae6b4;
+  border-radius: 3.125rem;
+}
+
+.pagesList__item__badgeUunpublished {
+  font-size: 1rem;
+  line-height: 1.187;
+  color: #ffffff;
+
+  width: 8.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.4375rem 0rem;
+  margin-right: 6.25rem;
+
+  background: orangered;
+  border: 2px solid #9ae6b4;
+  border-radius: 3.125rem;
+}
+
+.pagesList__item__author {
+  font-size: 0.875rem;
+  line-height: 1.143;
+  color: #2a4365;
+}
+
+.pagesList__item__author:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.pagesList__item__bageAdmin {
+  padding: 0.3125rem 1.0625rem;
+  margin-left: auto;
+
+  background: #2c5282;
+  border-radius: 3.125rem;
+
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.143;
+
+  color: #fffcfe;
+}
+
+.pagesList__item__authorWrapper {
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
