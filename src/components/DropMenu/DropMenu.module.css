@@ -1,0 +1,47 @@
+.dropMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+
+  padding: 1.25rem 1.125rem 2.8125rem 1.4375rem;
+
+  background-color: #fffcfe;
+  border-radius: 0.3125rem;
+}
+
+.dropMenu__title {
+  font-size: 1rem;
+  line-height: 1.187;
+  color: #3182ce;
+
+  width: 9.125rem;
+
+  padding-bottom: 0.25rem;
+  margin-bottom: 1.4375rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dropMenu__actionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8125rem;
+}
+
+.dropMenu__actionsItem {
+  cursor: pointer;
+}
+
+.dropMenu__actionsButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0;
+  cursor: inherit;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  line-height: 1.187;
+  color: #2a4365;
+}
