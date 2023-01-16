@@ -1,24 +1,17 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AddFileIcon } from '../../assets/icons/SvgIcons';
 import { UserLayout } from '../../components/UserLayout/UserLayout';
 import { ViewPageListItem } from '../../components/ViewPageListItem/ViewPageListItem';
+import { onSortPages } from '../../redux/addFilesSlice';
 import styles from './ViewPage.module.css';
 
 export const ViewPage = () => {
   const pages = useSelector(state => state.sitePages);
-  const [sortedPages, setSortedPages] = useState(pages);
+  const dispatch = useDispatch();
 
   const handleFilterClick = filterBy => {
-    setSortedPages(
-      structuredClone(pages).sort((a, b) => {
-        if (filterBy === 'created' || filterBy === 'published') {
-          return a[filterBy] > b[filterBy] ? -1 : 1;
-        }
-        return a[filterBy] > b[filterBy] ? 1 : -1;
-      })
-    );
+    dispatch(onSortPages(filterBy));
   };
 
   return (
@@ -69,7 +62,7 @@ export const ViewPage = () => {
           </Link>
         </div>
         <ul className={styles.pagesList}>
-          {sortedPages.map(item => (
+          {pages.map(item => (
             <ViewPageListItem key={item.id} item={item} />
           ))}
         </ul>

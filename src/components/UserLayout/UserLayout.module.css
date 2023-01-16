@@ -1,7 +1,7 @@
 .sidebar {
-  padding: 4.345rem;
+  padding: 4.3rem;
   background-color: #edf2f7;
-  max-width: 18.75rem;
+  max-width: 18.85rem;
 }
 
 .sidebar__title {
@@ -13,6 +13,9 @@
 
 .sidebar__list {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
 }
 
 .sidebar__list:not(:last-child) {
@@ -36,6 +39,7 @@
   color: #2c5282;
 
   transition: all 250ms linear;
+  width: 100%;
 }
 
 .list__link:hover,

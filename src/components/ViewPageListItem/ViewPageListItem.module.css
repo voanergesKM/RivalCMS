@@ -7,13 +7,35 @@
 }
 
 .pagesList__item__title {
+  border: 1px solid #4299e1;
+  /* padding: 0.5rem; */
+  outline: none;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.167;
+
+  color: #4299e1;
+
+  width: 12rem;
+
+  margin-right: 1rem;
+}
+
+.pagesList__item__title:disabled {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.167;
 
   color: #2a4365;
 
-  width: 13.9375rem;
+  width: 12rem;
+
+  margin-right: 1rem;
 }
 
 .pagesList__item__created {
@@ -67,10 +89,6 @@
   color: #2a4365;
 }
 
-.pagesList__item__author:not(:last-child) {
-  margin-right: 0.5rem;
-}
-
 .pagesList__item__bageAdmin {
   padding: 0.3125rem 1.0625rem;
   margin-left: auto;
@@ -89,4 +107,14 @@
   width: 200px;
   display: flex;
   align-items: center;
+  margin-right: auto;
+}
+
+.menuBtn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
 }

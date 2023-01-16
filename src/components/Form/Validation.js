@@ -39,3 +39,7 @@ export const RegisterSchema = Yup.object().shape({
     .max(200)
     .matches(/^[A-Za-z]{1}[a-z]{1,200}( [A-Za-z]{1})?([a-z]{1,200})?$/, 'Required max 2 words'),
 });
+
+export const renameSchema = Yup.object({
+  pageName: Yup.string().required('Min 3 and max 20 characters').min(3).max(20),
+});
