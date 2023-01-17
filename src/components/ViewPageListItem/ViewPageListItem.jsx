@@ -5,7 +5,8 @@ import { MoreIcon } from '../../assets/icons/SvgIcons';
 import { changePageStatus, onRenamePage } from '../../redux/addFilesSlice';
 import { msToTime } from '../../utils/convertMs';
 import { DropMenu } from '../DropMenu/DropMenu';
-import { renameSchema } from '../Form/Validation';
+import { pageNameSchema } from '../Form/Validation';
+import { User } from '../User/User';
 import { ValidationErrorMessage } from '../ValidationErrorMessage';
 import styles from './ViewPageListItem.module.css';
 
@@ -23,7 +24,7 @@ export const ViewPageListItem = ({
       pageName,
     },
 
-    validationSchema: renameSchema,
+    validationSchema: pageNameSchema,
 
     onSubmit: values => {
       setDisableInput(true);
@@ -60,11 +61,8 @@ export const ViewPageListItem = ({
       >
         {published ? 'Published' : 'Unpublished'}
       </p>
-      <div className={styles.pagesList__item__authorWrapper}>
-        <p className={styles.pagesList__item__author}>{authorName}</p>
-        {isAdmin && <span className={styles.pagesList__item__bageAdmin}>Admin</span>}
-      </div>
-      <div style={{ position: 'relative' }}>
+      <User authorName={authorName} isAdmin={isAdmin} />
+      <div style={{ position: 'relative', marginLeft: 'auto' }}>
         <button
           onClick={() => setIsMenuOpen(true)}
           type="button"
@@ -79,12 +77,7 @@ export const ViewPageListItem = ({
           <MoreIcon size={24} />
         </button>
         {isMenuOpen && (
-          <DropMenu
-            toggleMenu={setIsMenuOpen}
-            pageId={id}
-            handleChangeStatus={handleChangeStatus}
-            toggleInput={setDisableInput}
-          />
+          <DropMenu toggleMenu={setIsMenuOpen} pageId={id} toggleInput={setDisableInput} />
         )}
       </div>
     </li>

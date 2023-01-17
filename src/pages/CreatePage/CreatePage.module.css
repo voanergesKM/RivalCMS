@@ -1,4 +1,98 @@
-.page {
-  padding-right: 3.75rem;
+.createPage {
+  width: 100%;
+
+  padding: 2.375rem 1.875rem;
+  width: 100%;
+}
+
+.createPage__header {
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+}
+
+.createPage__form {
+  display: flex;
+  align-items: center;
+
+  padding-bottom: 0.5rem;
+  width: 17.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.createPage__form__label {
+  line-height: 0;
+  margin-right: 1.5rem;
+}
+
+.createPage__form__input {
+  border: none;
+  outline: none;
+
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.167;
+  color: #2a4365;
+}
+
+.createPage__form__btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.5625rem 2.875rem 0.5625rem 1.0625rem;
+  border: none;
+
+  background-color: #2a4365;
+  border-radius: 0.3125rem;
+
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.187;
+  color: #fffcfe;
+
+  transition: all 250ms linear;
+}
+
+.createPage__form__btn:not(:disabled):hover,
+.createPage__form__btn:not(:disabled):focus {
+  background-color: #4299e1;
+}
+
+.upload {
+  cursor: pointer;
+  width: 100%;
+  height: 16.625rem;
+  background: #f7fafc;
+  border: 1px solid #bee3f8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 250ms linear;
+}
+
+.upload:hover,
+.upload:focus {
+  border-color: #4299e1;
+
+  background-color: rgba(66, 153, 225, 0.2);
+}
+
+.upload__actions {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border: none;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.167;
+  color: #2a4365;
 }
