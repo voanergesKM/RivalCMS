@@ -51,7 +51,13 @@ export const addPageSlice = createSlice({
     addSitePage(state, action) {
       const id = Date.now();
 
-      const { pageName, created, published, authorName, isAdmin } = action.payload;
+      const {
+        pageName,
+        lastModified: created,
+        published = false,
+        name: authorName,
+        isAdmin,
+      } = action.payload;
 
       return [...state, { id, pageName, created, published, authorName, isAdmin }];
     },

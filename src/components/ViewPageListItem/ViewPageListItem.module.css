@@ -83,33 +83,6 @@
   border-radius: 3.125rem;
 }
 
-.pagesList__item__author {
-  font-size: 0.875rem;
-  line-height: 1.143;
-  color: #2a4365;
-}
-
-.pagesList__item__bageAdmin {
-  padding: 0.3125rem 1.0625rem;
-  margin-left: auto;
-
-  background: #2c5282;
-  border-radius: 3.125rem;
-
-  font-weight: 700;
-  font-size: 0.875rem;
-  line-height: 1.143;
-
-  color: #fffcfe;
-}
-
-.pagesList__item__authorWrapper {
-  width: 200px;
-  display: flex;
-  align-items: center;
-  margin-right: auto;
-}
-
 .menuBtn {
   cursor: pointer;
   display: flex;

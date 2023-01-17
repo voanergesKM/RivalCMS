@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.user__name {
+  font-size: 0.875rem;
+  line-height: 1.143;
+  color: #2a4365;
+}
+
+.user__badge {
+  padding: 0.3125rem 1.0625rem;
+
+  background: #2c5282;
+  border-radius: 3.125rem;
+
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.143;
+
+  color: #fffcfe;
+}
