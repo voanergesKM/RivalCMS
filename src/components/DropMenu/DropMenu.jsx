@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { EditIcon, ThemesIcon, TrashIcon } from '../../assets/icons/SvgIcons';
-import { onDeletePage } from '../../redux/addFilesSlice';
+import { changePageStatus, onDeletePage } from '../../redux/addFilesSlice';
 import styles from './DropMenu.module.css';
 
-export const DropMenu = ({ toggleMenu, pageId, handleChangeStatus, toggleInput }) => {
+export const DropMenu = ({ toggleMenu, pageId, toggleInput }) => {
   const rootEl = useRef();
   const dispatch = useDispatch();
 
@@ -33,7 +33,7 @@ export const DropMenu = ({ toggleMenu, pageId, handleChangeStatus, toggleInput }
   };
 
   const changeStatus = pageId => {
-    handleChangeStatus(pageId);
+    dispatch(changePageStatus(pageId));
     toggleMenu(false);
   };
 
