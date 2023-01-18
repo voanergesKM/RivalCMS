@@ -15,6 +15,7 @@ export const CreatePage = () => {
   const [isPageNameInputDisabled, setIsPageNameInputDisabled] = useState(true);
 
   const user = useSelector(state => state.loggedUser);
+  const pages = useSelector(state => state.sitePages);
 
   const dispatch = useDispatch();
 
@@ -27,6 +28,12 @@ export const CreatePage = () => {
 
     const { pageName } = values;
 
+    const findedPage = pages.some(page => page.pageName.toLowerCase() === pageName.toLowerCase());
+
+    if (findedPage) {
+      return alert(`Page named ${pageName} already exist, please enter another name`);
+    }
+
     const { lastModified } = selectedFile;
     const { name, isAdmin } = user;
 
@@ -35,6 +42,7 @@ export const CreatePage = () => {
     setSelectedFile(null);
 
     setIsBtnDisabled(true);
+    setIsPageNameInputDisabled(true);
     alert(`File ${pageName} was succesfully added`);
 
     actions.resetForm();
