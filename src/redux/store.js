@@ -1,11 +1,13 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { addPageSlice } from './addFilesSlice';
+import { pageSlice } from './addPagesSlice';
+import { filesSlice } from './filesSlice';
 import { authorizationSlice, signInUserSlice } from './usersSlice';
 
 const rootReducer = combineReducers({
   users: authorizationSlice.reducer,
   loggedUser: signInUserSlice.reducer,
-  sitePages: addPageSlice.reducer,
+  sitePages: pageSlice.reducer,
+  siteFiles: filesSlice.reducer,
 });
 
 export const store = configureStore({
