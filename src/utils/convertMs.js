@@ -1,4 +1,4 @@
-export function msToTime(created, currentTime) {
+export function msToTime(created, currentTime, uploaded = null) {
   const time = currentTime - created;
 
   const days = Math.floor(time / 86400000);
@@ -16,5 +16,5 @@ export function msToTime(created, currentTime) {
     data = `${weeks} weeks`;
   } else data = `${days || 0} days`;
 
-  return `Updated ${data} ago`;
+  return `${uploaded ? 'Uploaded' : 'Updated'} ${data} ago`;
 }

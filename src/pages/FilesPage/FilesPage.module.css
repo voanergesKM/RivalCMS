@@ -1,0 +1,163 @@
+.container {
+  width: 100%;
+  padding: 3.125rem 2.5625rem;
+}
+
+.fileContainer {
+  cursor: pointer;
+
+  height: 9.5625rem;
+  background: #f7fafc;
+  border: 2px solid #bee3f8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 250ms linear;
+
+  margin-bottom: 1.25rem;
+}
+
+.fileContainer:hover,
+.fileContainer:focus {
+  border-color: #4299e1;
+
+  background-color: rgba(66, 153, 225, 0.2);
+}
+
+.fileContainer__actions {
+  text-align: center;
+}
+
+.fileContainer__actions__btn {
+  cursor: pointer;
+  border: none;
+  background: #2c5282;
+  border-radius: 0.3125rem;
+  padding: 0.8125rem 1.1875rem;
+
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.187;
+  color: #ffffff;
+
+  margin-bottom: 1rem;
+
+  transition: all 250ms linear;
+}
+
+.fileContainer__actions__btn:not(:disabled):hover,
+.fileContainer__actions__btn:not(:disabled):focus {
+  background-color: #4299e1;
+}
+
+.fileContainer__actions__text {
+  font-size: 1rem;
+  line-height: 1.187;
+  color: #2c5282;
+}
+
+.actions {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 0.75rem;
+}
+
+.actions__search {
+  width: 15.1875rem;
+
+  padding-bottom: 0.75rem;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.actions__search__input {
+  border: none;
+  outline: none;
+
+  font-size: 1rem;
+  line-height: 1.187;
+  color: #718096;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+}
+
+.filter__title {
+  font-size: 1rem;
+  line-height: 1.187;
+  color: #90cdf4;
+
+  margin-right: 1.5rem;
+}
+
+.filter__list {
+  display: flex;
+  align-items: center;
+
+  gap: 1.3125rem;
+}
+
+.filter__list__btn {
+  cursor: pointer;
+
+  padding: 0.25rem 0.875rem;
+
+  background-color: transparent;
+  border: 1px solid #2c5282;
+  border-radius: 3.125rem;
+
+  font-size: 0.875rem;
+  line-height: 1.143;
+
+  color: #2c5282;
+
+  transition: all 250ms linear;
+}
+
+.filter__list__btn:hover,
+.filter__list__btn:focus {
+  background-color: #2c5282;
+  border-color: #2c5282;
+  color: #ffffff;
+}
+
+.filter__list__btnActive {
+  cursor: pointer;
+
+  padding: 0.25rem 0.875rem;
+
+  background-color: #2c5282;
+  border: 1px solid #2c5282;
+  border-radius: 3.125rem;
+
+  font-size: 0.875rem;
+  line-height: 1.143;
+
+  color: #ffffff;
+
+  transition: all 250ms linear;
+}
+
+.filter__list__btnActive:hover,
+.filter__list__btnActive:focus {
+  background-color: #4299e1;
+  border-color: #4299e1;
+}
+
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.0625rem;
+}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AddFileIcon } from '../../assets/icons/SvgIcons';
 import { UserLayout } from '../../components/UserLayout/UserLayout';
 import { ViewPageListItem } from '../../components/ViewPageListItem/ViewPageListItem';
-import { onSortPages } from '../../redux/addFilesSlice';
+import { onSortPages } from '../../redux/addPagesSlice';
 import styles from './ViewPage.module.css';
 
 export const ViewPage = () => {
