@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { EditIcon, ThemesIcon, TrashIcon } from '../../assets/icons/SvgIcons';
-import { changePageStatus, onDeletePage } from '../../redux/addFilesSlice';
+import { changePageStatus, onDeletePage } from '../../redux/addPagesSlice';
+import { deleteFile } from '../../redux/filesSlice';
 import styles from './DropMenu.module.css';
 
-export const DropMenu = ({ toggleMenu, pageId, toggleInput }) => {
+export const DropMenu = ({ toggleMenu, pageId, toggleInput, action }) => {
   const rootEl = useRef();
   const dispatch = useDispatch();
 
@@ -37,7 +38,17 @@ export const DropMenu = ({ toggleMenu, pageId, toggleInput }) => {
     toggleMenu(false);
   };
 
-  const deletePage = pageId => dispatch(onDeletePage(pageId));
+  const deletePage = pageId => {
+    if (action === 'files') {
+      const confirmed = window.confirm('Please, confirm delete file');
+      if (confirmed) {
+        dispatch(deleteFile(pageId));
+        return;
+      }
+      return;
+    }
+    dispatch(onDeletePage(pageId));
+  };
 
   return (
     <div ref={rootEl} className={styles.dropMenu}>
@@ -55,16 +66,18 @@ export const DropMenu = ({ toggleMenu, pageId, toggleInput }) => {
             Edit file name
           </button>
         </li>
-        <li className={styles.dropMenu__actionsItem}>
-          <button
-            onClick={() => changeStatus(pageId)}
-            type="button"
-            className={styles.dropMenu__actionsButton}
-          >
-            <ThemesIcon size={24} />
-            Change status
-          </button>
-        </li>
+        {action === 'files' ? null : (
+          <li className={styles.dropMenu__actionsItem}>
+            <button
+              onClick={() => changeStatus(pageId)}
+              type="button"
+              className={styles.dropMenu__actionsButton}
+            >
+              <ThemesIcon size={24} />
+              Change status
+            </button>
+          </li>
+        )}
         <li className={styles.dropMenu__actionsItem}>
           <button
             onClick={() => deletePage(pageId)}

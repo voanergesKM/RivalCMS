@@ -4,7 +4,7 @@ import styles from './CreatePage.module.css';
 import { EditIcon, EyeIcon, PlusIcon } from '../../assets/icons/SvgIcons';
 import { UserLayout } from '../../components/UserLayout/UserLayout';
 import { User } from '../../components/User/User';
-import { addSitePage } from '../../redux/addFilesSlice';
+import { addSitePage } from '../../redux/addPagesSlice';
 import { useFormik } from 'formik';
 import { pageNameSchema } from '../../components/Form/Validation';
 import { ValidationErrorMessage } from '../../components/ValidationErrorMessage';
@@ -16,6 +16,7 @@ export const CreatePage = () => {
 
   const user = useSelector(state => state.loggedUser);
   const pages = useSelector(state => state.sitePages);
+  console.log('CreatePage : pages', pages);
 
   const dispatch = useDispatch();
 

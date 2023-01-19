@@ -43,3 +43,7 @@ export const RegisterSchema = Yup.object().shape({
 export const pageNameSchema = Yup.object({
   pageName: Yup.string().required('Min 3 and max 20 characters').min(3).max(20),
 });
+
+export const fileNameSchema = Yup.object({
+  fileName: Yup.string().required('Min 3 and max 20 characters').min(3).max(20),
+});

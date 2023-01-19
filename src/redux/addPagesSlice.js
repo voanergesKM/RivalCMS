@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const addPageSlice = createSlice({
+export const pageSlice = createSlice({
   name: 'addPage',
 
   initialState: [
@@ -96,4 +96,4 @@ export const addPageSlice = createSlice({
 });
 
 export const { addSitePage, changePageStatus, onDeletePage, onSortPages, onRenamePage } =
-  addPageSlice.actions;
+  pageSlice.actions;

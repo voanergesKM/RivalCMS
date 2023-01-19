@@ -1,9 +1,9 @@
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { MoreIcon } from '../../assets/icons/SvgIcons';
-import { changePageStatus, onRenamePage } from '../../redux/addFilesSlice';
+import { changePageStatus, onRenamePage } from '../../redux/addPagesSlice';
 import { msToTime } from '../../utils/convertMs';
+import { ActionsMoreBtn } from '../Buttons/ActionsMoreBtn/ActionsMoreBtn';
 import { DropMenu } from '../DropMenu/DropMenu';
 import { pageNameSchema } from '../Form/Validation';
 import { User } from '../User/User';
@@ -63,19 +63,7 @@ export const ViewPageListItem = ({
       </p>
       <User authorName={authorName} isAdmin={isAdmin} />
       <div style={{ position: 'relative', marginLeft: 'auto' }}>
-        <button
-          onClick={() => setIsMenuOpen(true)}
-          type="button"
-          className={styles.menuBtn}
-          style={{
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            marginLeft: 'auto',
-          }}
-        >
-          <MoreIcon size={24} />
-        </button>
+        <ActionsMoreBtn toggle={setIsMenuOpen} />
         {isMenuOpen && (
           <DropMenu toggleMenu={setIsMenuOpen} pageId={id} toggleInput={setDisableInput} />
         )}
