@@ -5,6 +5,60 @@ export const filesSlice = createSlice({
 
   initialState: [
     {
+      id: 1674230658754.4648,
+      name: 'request.ods',
+      type: 'application/vnd.oasis.opendocument.spreadsheet',
+      uploaded: 1674230658754,
+    },
+    {
+      id: 1674230658753.278,
+      name: 'IMG_6674.JPG',
+      type: 'image/jpeg',
+      uploaded: 1674230658753,
+    },
+    {
+      id: 1674230658753.7373,
+      name: 'IMG_6679.JPEG',
+      type: 'image/jpeg',
+      uploaded: 1674230658753,
+    },
+    {
+      id: 1674230658752.6191,
+      name: 'Oleksandr-Kurzhy_Junior_Front-end.pdf',
+      type: 'application/pdf',
+      uploaded: 1674230658752,
+    },
+    {
+      id: 1674230658752.947,
+      name: 'Без назви 1.odt',
+      type: 'application/vnd.oasis.opendocument.text',
+      uploaded: 1674230658752,
+    },
+    {
+      id: 1674230658751.233,
+      name: 'сан просв менархе.odt',
+      type: 'application/vnd.oasis.opendocument.text',
+      uploaded: 1674230658751,
+    },
+    {
+      id: 1674230658750.4053,
+      name: 'Мої відгуки на вакансії.xlsx',
+      type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      uploaded: 1674230658750,
+    },
+    {
+      id: 1674230658749.1584,
+      name: 'сан просв менархе.docx',
+      type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      uploaded: 1674230658749,
+    },
+    {
+      id: 1674230658746.691,
+      name: 'гестози.odt',
+      type: 'application/vnd.oasis.opendocument.text',
+      uploaded: 1674230658746,
+    },
+    {
       id: 1674056192236.6887,
       name: 'seafood.jpg',
       type: 'image/jpeg',
