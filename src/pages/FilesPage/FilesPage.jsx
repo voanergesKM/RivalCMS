@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { SearchIcon } from '../../assets/icons/SvgIcons';
-import { FileItem } from '../../components/FileItem/FileItem';
+import Pagination from '../../components/Pagination/Pagination';
 import { UserLayout } from '../../components/UserLayout/UserLayout';
 import { addSiteFiles } from '../../redux/filesSlice';
 import styles from './FilesPage.module.css';
@@ -16,6 +16,9 @@ const types = [
 export const FilesPage = () => {
   const siteFiles = useSelector(state => state.siteFiles);
   const [search, setSearch] = useState('');
+
+  // const [searchParams, setSearchParams] = useSearchParams();
+
   const [activeFilterBtn, setActiveFilterBtn] = useState(null);
   const [searchedFiles, setSearchedFiles] = useState(siteFiles);
   const [filteredFile, setFilteredFile] = useState(searchedFiles);
@@ -55,7 +58,6 @@ export const FilesPage = () => {
   const handleFilterBtnClick = filterBy => {
     setActiveFilterBtn(filterBy);
 
-    console.log('handleFilterBtnClick : filterBy', filterBy);
     setFilteredFile(searchedFiles.filter(file => file.type.includes(filterBy)));
   };
 
@@ -125,13 +127,23 @@ export const FilesPage = () => {
           </div>
         </div>
 
-        {filteredFile.length > 0 && (
-          <ul className={styles.fileList}>
-            {filteredFile.map(file => (
-              <FileItem key={file.id} file={file} />
-            ))}
-          </ul>
-        )}
+        <div
+          style={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          {/* {currentTableData.length > 0 && (
+            <ul style={{ flexGrow: 1 }} className={styles.fileList}>
+              {currentTableData.map(file => (
+                <FileItem key={file.id} file={file} />
+              ))}
+            </ul>
+          )} */}
+
+          <Pagination pages={filteredFile} />
+        </div>
       </div>
     </UserLayout>
   );
