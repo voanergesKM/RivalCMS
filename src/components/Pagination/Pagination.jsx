@@ -15,16 +15,18 @@ function Pagination({ pages }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // useEffect(() => {
-  //   const currentPage = Number(searchParams.get('page'));
-  //   const desiredPages = Math.ceil(pages.length / 5);
+  useEffect(() => {
+    const currentPage = Number(searchParams.get('page'));
+    const desiredPages = Math.ceil(pages.length / 5);
 
-  //   if (desiredPages < currentPage) {
-  //     console.log('useEffect : currentPage', currentPage);
-  //     console.log('useEffect : desiredPages', desiredPages);
-  //     setSearchParams({ page: desiredPages });
-  //   }
-  // }, [pages]);
+    if (desiredPages < currentPage) {
+      setSearchParams({ page: desiredPages });
+    }
+
+    if (currentPage === 0 && pages.length) {
+      setSearchParams({ page: '1' });
+    }
+  }, [pages, searchParams, setSearchParams]);
 
   const { firstContentIndex, lastContentIndex, nextPage, prevPage, page, gaps, totalPages } =
     usePagination({
