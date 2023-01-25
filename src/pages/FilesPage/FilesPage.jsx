@@ -17,8 +17,6 @@ export const FilesPage = () => {
   const siteFiles = useSelector(state => state.siteFiles);
   const [search, setSearch] = useState('');
 
-  // const [searchParams, setSearchParams] = useSearchParams();
-
   const [activeFilterBtn, setActiveFilterBtn] = useState(null);
   const [searchedFiles, setSearchedFiles] = useState(siteFiles);
   const [filteredFile, setFilteredFile] = useState(searchedFiles);
@@ -30,6 +28,7 @@ export const FilesPage = () => {
   }, [search, siteFiles]);
 
   useEffect(() => {
+    setActiveFilterBtn(null);
     setFilteredFile(searchedFiles);
   }, [searchedFiles]);
 
@@ -132,17 +131,10 @@ export const FilesPage = () => {
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
+            flexGrow: '1',
           }}
         >
-          {/* {currentTableData.length > 0 && (
-            <ul style={{ flexGrow: 1 }} className={styles.fileList}>
-              {currentTableData.map(file => (
-                <FileItem key={file.id} file={file} />
-              ))}
-            </ul>
-          )} */}
-
-          <Pagination pages={filteredFile} />
+          <Pagination pages={filteredFile} files />
         </div>
       </div>
     </UserLayout>
