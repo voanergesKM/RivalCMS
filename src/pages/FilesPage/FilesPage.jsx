@@ -134,7 +134,7 @@ export const FilesPage = () => {
             flexGrow: '1',
           }}
         >
-          <Pagination pages={filteredFile} />
+          <Pagination pages={filteredFile} files />
         </div>
       </div>
     </UserLayout>

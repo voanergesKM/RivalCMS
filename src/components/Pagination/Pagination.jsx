@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import usePagination from '../../hooks/usePagination';
 import { FileItem } from '../FileItem/FileItem';
+import { ViewPageListItem } from '../ViewPageListItem/ViewPageListItem';
 
 import styles from './Pagination.module.css';
 
-function Pagination({ pages }) {
+function Pagination({ pages, view = false, files = false }) {
   const [searchParams, setSearchParams] = useSearchParams({ page: 1 });
 
   useEffect(() => {
@@ -36,12 +37,23 @@ function Pagination({ pages }) {
 
   return (
     <>
-      <ul style={{ flexGrow: 1 }}>
-        {pages &&
-          pages
-            .slice(firstContentIndex, lastContentIndex)
-            .map(file => <FileItem key={file.id} file={file} />)}
-      </ul>
+      {files && (
+        <ul style={{ flexGrow: 1 }}>
+          {pages &&
+            pages
+              .slice(firstContentIndex, lastContentIndex)
+              .map(file => <FileItem key={file.id} file={file} />)}
+        </ul>
+      )}
+
+      {view && (
+        <ul className={styles.pagesList}>
+          {pages &&
+            pages
+              .slice(firstContentIndex, lastContentIndex)
+              .map(item => <ViewPageListItem key={item.id} item={item} />)}
+        </ul>
+      )}
 
       {totalPages > 0 && (
         <div className={styles.paginationContainer}>
