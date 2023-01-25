@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AddFileIcon } from '../../assets/icons/SvgIcons';
+import Pagination from '../../components/Pagination/Pagination';
 import { UserLayout } from '../../components/UserLayout/UserLayout';
-import { ViewPageListItem } from '../../components/ViewPageListItem/ViewPageListItem';
 import { onSortPages } from '../../redux/addPagesSlice';
 import styles from './ViewPage.module.css';
 
@@ -61,11 +61,8 @@ export const ViewPage = () => {
             Add new
           </Link>
         </div>
-        <ul className={styles.pagesList}>
-          {pages.map(item => (
-            <ViewPageListItem key={item.id} item={item} />
-          ))}
-        </ul>
+
+        {pages && <Pagination pages={pages} view />}
       </div>
     </UserLayout>
   );
