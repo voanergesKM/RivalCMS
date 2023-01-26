@@ -15,35 +15,6 @@
   align-items: center;
 }
 
-.sortBar__list {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
-}
-
-/* .sortBar__item {
-} */
-
-.sortBar__btn {
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.187;
-  color: #2c5282;
-
-  background-color: transparent;
-  border: none;
-  padding: 0.5rem 0rem;
-
-  cursor: pointer;
-
-  transition: all 250ms linear;
-}
-
-.sortBar__btn:hover,
-.sortBar__btn:focus {
-  color: #4299e1;
-}
-
 .addBtn {
   display: flex;
   align-items: center;
