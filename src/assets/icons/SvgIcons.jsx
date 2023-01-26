@@ -622,3 +622,71 @@ export const SearchIcon = ({ size }) => {
     </svg>
   );
 };
+
+export const AscendingIcon = ({ size }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m10 15-4 4-4-4"
+        style={{
+          fill: 'none',
+          stroke: '#2c5282',
+          strokeLinecap: 'round',
+          strokeLlinejoin: 'round',
+          strokeWidth: '2',
+        }}
+      />
+      <path
+        d="M6 19V4m14 12h-5m5-5h-7m7-5H10"
+        data-name="primary"
+        style={{
+          fill: 'none',
+          stroke: '#2c5282',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+          strokeWidth: '2',
+        }}
+      />
+    </svg>
+  );
+};
+
+export const DescendingIcon = ({ size }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m2 8 4-4 4 4"
+        style={{
+          fill: 'none',
+          stroke: '#2c5282',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+          strokeWidth: '2',
+        }}
+      />
+      <path
+        d="M6 4v15M20 7h-5m5 5h-7m7 5H10"
+        data-name="primary"
+        style={{
+          fill: 'none',
+          stroke: '#2c5282',
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
+          strokeWidth: '2',
+        }}
+      />
+    </svg>
+  );
+};
