@@ -19,7 +19,6 @@ export const LoginForm = () => {
     const confirmedUser = users.find(
       ({ email, password }) => email.includes(values.email) && password.includes(values.password)
     );
-    console.log('handleSubmit : confirmedUser', confirmedUser);
 
     if (!confirmedUser) {
       alert("User doesn't exists");
