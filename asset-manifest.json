@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/RivalCMS/static/css/main.528c7a24.css",
-    "main.js": "/RivalCMS/static/js/main.763c57c1.js",
+    "main.css": "/RivalCMS/static/css/main.cbe413ee.css",
+    "main.js": "/RivalCMS/static/js/main.9665953f.js",
     "static/media/feature.jpg": "/RivalCMS/static/media/feature.369061d9372c153207af.jpg",
     "static/media/hero.png": "/RivalCMS/static/media/hero.8041a9cce78980aabd31.png",
     "static/media/MusicIcon.svg": "/RivalCMS/static/media/MusicIcon.45f9014a68b3f279b650f7b36a00a2ba.svg",
@@ -9,11 +9,11 @@
     "static/media/VideoIcon.svg": "/RivalCMS/static/media/VideoIcon.e83bc4a39ee945fceabe5c3e1660a394.svg",
     "static/media/ImageIcon.svg": "/RivalCMS/static/media/ImageIcon.9e54c394bea70fbc6bc9bef5ab70b270.svg",
     "static/media/DocumentIcon.svg": "/RivalCMS/static/media/DocumentIcon.68854a8b4e7c4cf3729ad8ea5084f8e7.svg",
-    "main.528c7a24.css.map": "/RivalCMS/static/css/main.528c7a24.css.map",
-    "main.763c57c1.js.map": "/RivalCMS/static/js/main.763c57c1.js.map"
+    "main.cbe413ee.css.map": "/RivalCMS/static/css/main.cbe413ee.css.map",
+    "main.9665953f.js.map": "/RivalCMS/static/js/main.9665953f.js.map"
   },
   "entrypoints": [
-    "static/css/main.528c7a24.css",
-    "static/js/main.763c57c1.js"
+    "static/css/main.cbe413ee.css",
+    "static/js/main.9665953f.js"
   ]
 }
