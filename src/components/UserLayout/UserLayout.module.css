@@ -1,8 +1,23 @@
 .sidebar {
+  position: absolute;
+  top: 80px;
+  left: -16rem;
   padding: 4.3rem;
   background-color: #edf2f7;
-  max-width: 18.85rem;
-  height: 100%;
+  width: 16rem;
+
+  transition: all 250ms linear;
+}
+
+.sidebar__open {
+  composes: sidebar;
+  left: 0;
+}
+
+.menuIcon {
+  position: absolute;
+  top: 0.625rem;
+  right: -3rem;
 }
 
 .sidebar__title {
@@ -30,7 +45,7 @@
 }
 
 .list__item:not(:last-child) {
-  margin-bottom: 1.9375rem;
+  margin-bottom: 1.4rem;
 }
 
 .list__link {
@@ -49,17 +64,26 @@
 }
 
 .list__linkActive {
-  text-decoration: none;
-  font-size: 1.125rem;
-  line-height: 1.167;
-  color: #2c5282;
+  composes: list__link;
 
   font-weight: 900;
-
-  transition: all 250ms linear;
 }
 
 .list__linkActive:hover,
 .list__linkActive:focus {
   color: #63b3ed;
+}
+
+@media screen and (min-width: 41.625rem) {
+  .list__item:not(:last-child) {
+    margin-bottom: 1.9375rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .sidebar {
+    position: static;
+    width: 18.85rem;
+    height: 100%;
+  }
 }

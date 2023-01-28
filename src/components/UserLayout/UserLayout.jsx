@@ -5,16 +5,28 @@ import styles from './UserLayout.module.css';
 
 import { manageList, featureList } from '../../utils/LinkItemsData';
 import { NavLink, useLocation } from 'react-router-dom';
+import { useMatchMedia } from '../../hooks/useMatchMedia';
+import { useState } from 'react';
+import { CloseMenuIcon, OpenMenuIcon } from '../../assets/icons/SvgIcons';
 
 export const UserLayout = ({ children }) => {
   const location = useLocation();
+  const { isMobile, isMobilePlus, isTablet } = useMatchMedia();
+  const [isMenuOpen, setisMenuOpen] = useState(false);
+
+  const toggleMenu = () => setisMenuOpen(!isMenuOpen);
 
   return (
     <Container>
       <UserHeader />
       <div style={{ display: 'flex' }}>
         <aside>
-          <nav className={styles.sidebar}>
+          <nav className={isMenuOpen ? styles.sidebar__open : styles.sidebar}>
+            {isMobile || isMobilePlus || isTablet ? (
+              <div className={styles.menuIcon} onClick={toggleMenu}>
+                {!isMenuOpen ? <OpenMenuIcon size={36} /> : <CloseMenuIcon size={36} />}
+              </div>
+            ) : null}
             <p className={styles.sidebar__title}>Manage</p>
             <ul className={styles.sidebar__list}>
               {manageList.map(({ href, title, icon: Icon }, index) => (

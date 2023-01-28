@@ -1,5 +1,5 @@
 .header {
-  padding: 0.9375rem 2.375rem 0.9375rem 4.5rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,7 +9,7 @@
 .userInfo {
   display: flex;
   align-items: center;
-  gap: 1.875rem;
+  gap: 1rem;
 }
 
 .userInfo__badge {
@@ -17,7 +17,7 @@
   font-size: 0.9375rem;
   line-height: 1.2;
 
-  padding: 0.4375rem 0.6875rem 0.4375rem 0.875rem;
+  padding: 0.5rem;
 
   color: #fffcfe;
   background: #ed64a6;
@@ -27,8 +27,27 @@
 }
 
 .userInfo__avatar {
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 3rem;
+  height: 3rem;
 
   border-radius: 50%;
+}
+
+@media screen and (min-width: 41.625rem) {
+  .header {
+    padding: 0.9375rem 2.375rem 0.9375rem 4.5rem;
+  }
+
+  .userInfo {
+    gap: 1.875rem;
+  }
+
+  .userInfo__badge {
+    padding: 0.4375rem 0.6875rem 0.4375rem 0.875rem;
+  }
+
+  .userInfo__avatar {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
 }
