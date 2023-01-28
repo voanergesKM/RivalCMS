@@ -11,8 +11,8 @@
 }
 
 .form {
-  padding: 1.875rem 2.125rem 1.625rem 2.625rem;
-  max-width: 32rem;
+  padding: 1rem;
+  max-width: 18.75rem;
   background: #ffffff;
   border-radius: 0.625rem;
   margin: 0 auto;
@@ -22,14 +22,14 @@
 .form__wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.3125rem;
+  margin-bottom: 1rem;
 }
 
 .form__label {
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.15;
   color: #2a4365;
 
@@ -37,10 +37,10 @@
 }
 
 .form__input {
-  height: 4.375rem;
+  height: 2.375rem;
   background: #edf2f7;
   border-radius: 0.3125rem;
-  font-size: 1.55rem;
+  font-size: 1rem;
   padding-left: 1rem;
   color: #2a4365;
 
@@ -48,7 +48,7 @@
 }
 
 .error {
-  height: 4.375rem;
+  height: 2.375rem;
   background: #edf2f7;
   border-radius: 0.3125rem;
   font-size: 1.55rem;
@@ -67,7 +67,7 @@
 
 .form__actions p {
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.15;
   color: #3182ce;
 
@@ -92,8 +92,8 @@
   line-height: 1.15;
 
   color: #ffffff;
-  width: 12.5625rem;
-  height: 3.8125rem;
+
+  padding: 1rem 1.6rem;
 
   transition: all 250ms linear;
 }
@@ -126,4 +126,40 @@
   background-color: #2a4365;
 
   color: #ffffff;
+}
+
+@media screen and (min-width: 41.625rem) {
+  .form {
+    padding: 1.875rem 2.125rem 1.625rem 2.625rem;
+    max-width: 32rem;
+  }
+
+  .form__wrapper {
+    margin-bottom: 1.3125rem;
+  }
+
+  .form__label {
+    font-size: 1.25rem;
+  }
+
+  .form__input {
+    height: 4.375rem;
+
+    font-size: 1.55rem;
+  }
+
+  .error {
+    height: 4.375rem;
+  }
+
+  .form__actions p {
+    font-size: 1.25rem;
+  }
+
+  .form__actions button {
+    width: 12.5625rem;
+    height: 3.8125rem;
+
+    padding: 0rem;
+  }
 }

@@ -1,5 +1,5 @@
 .header {
-  padding: 1.125rem 2.5rem;
+  padding: 1rem 1rem;
   margin: 0 auto;
   background-color: #2d3748;
 
@@ -11,4 +11,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media screen and (min-width: 41.625rem) {
+  .header {
+    padding: 1.125rem 2.5rem;
+  }
 }
