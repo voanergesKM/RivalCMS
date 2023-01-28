@@ -1,10 +1,10 @@
 import { useState, useLayoutEffect } from 'react';
 
 const queries = [
-  '(max-width: 666px)',
-  '(max-width: 767px)',
-  '(min-width: 768px) and (max-width: 1199px)',
-  '(min-width: 1200px)',
+  '(max-width: 665px)',
+  '(min-width: 666px) and (max-width: 767px)',
+  '(min-width: 768px) and (max-width: 1023px)',
+  '(min-width: 1024px)',
 ];
 
 export const useMatchMedia = () => {
@@ -20,9 +20,9 @@ export const useMatchMedia = () => {
     mediaQueryList.forEach(list => list.addEventListener('change', handleChange));
 
     return () => mediaQueryList.forEach(list => list.removeEventListener('change', handleChange));
-  }, [getValues, mediaQueryList]);
+  });
 
-  return ['isMobilePlus', 'isMobile', 'isTablet', 'isDesktop'].reduce(
+  return ['isMobile', 'isMobilePlus', 'isTablet', 'isDesktop'].reduce(
     (acc, screen, idx) => ({ ...acc, [screen]: values[idx] }),
     {}
   );
