@@ -12,12 +12,19 @@
 .sidebar__open {
   composes: sidebar;
   left: 0;
+
+  z-index: 1000;
 }
 
 .menuIcon {
   position: absolute;
   top: 0.625rem;
   right: -3rem;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar__title {

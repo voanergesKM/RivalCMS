@@ -1,8 +1,14 @@
 .filter__list {
   display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  /* flex-grow: 1; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+
+  /* position: absolute; */
+
+  padding-left: 1rem;
 }
 
 .filter__list__item {
@@ -29,4 +35,124 @@
 .filter__list__btn:hover,
 .filter__list__btn:focus {
   color: #4299e1;
+}
+
+@media screen and (min-width: 666px) {
+  .filter__list {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filter__list__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter__list__btn {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.187;
+    color: #2c5282;
+
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 0rem;
+
+    cursor: pointer;
+
+    transition: all 250ms linear;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .filter__list {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filter__list__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter__list__btn {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.187;
+    color: #2c5282;
+
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 0rem;
+
+    cursor: pointer;
+
+    transition: all 250ms linear;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .filter__list {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filter__list__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter__list__btn {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.187;
+    color: #2c5282;
+
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 0rem;
+
+    cursor: pointer;
+
+    transition: all 250ms linear;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .filter__list {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filter__list__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter__list__btn {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.187;
+    color: #2c5282;
+
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 0rem;
+
+    cursor: pointer;
+
+    transition: all 250ms linear;
+  }
 }

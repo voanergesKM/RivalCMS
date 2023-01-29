@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { useReducer } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { AddFileIcon } from '../../assets/icons/SvgIcons';
+import { AddFileIcon, SortsIcon } from '../../assets/icons/SvgIcons';
 import { FilterBar } from '../../components/FilterBar/FilterBar';
 import Pagination from '../../components/Pagination/Pagination';
 import { UserLayout } from '../../components/UserLayout/UserLayout';
+import { useMatchMedia } from '../../hooks/useMatchMedia';
 import { ascendingSort, descendingSort } from '../../utils/pagesSort';
 import styles from './ViewPage.module.css';
 
@@ -13,8 +15,11 @@ export const ViewPage = () => {
   const pages = useSelector(state => state.sitePages);
 
   const initialState = { pages: [...pages], sortBy: '', direction: 'default' };
-
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
+
+  const { isMobile, isMobilePlus, isTablet } = useMatchMedia();
 
   useEffect(() => {
     dispatch({ type: 'default' });
@@ -59,10 +64,28 @@ export const ViewPage = () => {
     dispatch({ type: filterBy });
   };
 
+  const toggleFilterMenu = () => setIsFilterMenuOpen(!isFilterMenuOpen);
+
+  const handleBackdropClick = evt => {
+    if (evt.currentTarget === evt.target) {
+      setIsFilterMenuOpen(false);
+    }
+  };
+
   return (
     <UserLayout>
-      <div className={styles.page}>
-        <div className={styles.sortBar}>
+      <div
+        style={isFilterMenuOpen ? { width: '100%', height: '100vh' } : null}
+        className={styles.page}
+        onClick={handleBackdropClick}
+      >
+        <div className={isFilterMenuOpen ? styles.sortBarOpened : styles.sortBar}>
+          {isMobile || isMobilePlus || isTablet ? (
+            <div className={styles.sortBar__icon} onClick={toggleFilterMenu}>
+              {!isFilterMenuOpen && <SortsIcon size={36} />}
+            </div>
+          ) : null}
+
           <FilterBar state={state} handleFilterClick={handleFilterClick} />
 
           <Link className={styles.addBtn} to="/create">
@@ -71,7 +94,7 @@ export const ViewPage = () => {
           </Link>
         </div>
 
-        {state.pages && <Pagination pages={state.pages} view />}
+        {/* {state.pages && <Pagination pages={state.pages} view />} */}
       </div>
     </UserLayout>
   );

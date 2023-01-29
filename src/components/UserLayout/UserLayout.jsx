@@ -14,12 +14,23 @@ export const UserLayout = ({ children }) => {
   const { isMobile, isMobilePlus, isTablet } = useMatchMedia();
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
-  const toggleMenu = () => setisMenuOpen(!isMenuOpen);
+  const toggleMenu = () => {
+    setisMenuOpen(!isMenuOpen);
+  };
+
+  const handleBackdropClick = evt => {
+    if (evt.currentTarget === evt.target) {
+      setisMenuOpen(false);
+    }
+  };
 
   return (
     <Container>
       <UserHeader />
-      <div style={{ display: 'flex' }}>
+      <div
+        style={isMenuOpen ? { width: '100%', height: '100vh' } : null}
+        onClick={handleBackdropClick}
+      >
         <aside>
           <nav className={isMenuOpen ? styles.sidebar__open : styles.sidebar}>
             {isMobile || isMobilePlus || isTablet ? (

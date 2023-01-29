@@ -1,18 +1,54 @@
 .page {
+  position: relative;
+
   width: 100%;
   height: 100%;
-  padding: 2.25rem 3.9375rem 4.5625rem 1.4375rem;
+  padding: 1rem;
 
   display: flex;
   flex-direction: column;
 }
 
 .sortBar {
+  position: absolute;
+  top: 0;
+  left: -10rem;
   padding-bottom: 1.0625rem;
   border-bottom: 1px solid #e2e8f0;
 
   display: flex;
+  /* align-items: center; */
+
+  flex-direction: column-reverse;
+  gap: 1rem;
+  width: 160px;
+
+  background-color: #edf2f7;
+  padding: 1rem;
+
+  transition: all 250ms linear;
+}
+
+.sortBarOpened {
+  composes: sortBar;
+
+  left: 0;
+
+  transition: all 250ms linear;
+
+  z-index: 10000;
+}
+
+.sortBar__icon {
+  position: absolute;
+
+  top: 3rem;
+  right: -3rem;
+  z-index: 100;
+
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .addBtn {
@@ -21,15 +57,15 @@
   gap: 0.625rem;
 
   text-decoration: none;
-  margin-left: 9.0625rem;
-  padding: 0.5625rem 1.5rem 0.5625rem 0.875rem;
+  /* margin-left: 9.0625rem; */
+  padding: 0.5rem;
 
   background: #2a4365;
   border-radius: 0.3125rem;
 
   font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.187;
+  font-size: 0.8rem;
+  /* line-height: 1.187; */
   color: #fffcfe;
 
   transition: all 250ms linear;
@@ -38,4 +74,160 @@
 .addBtn:hover,
 .addBtn:focus {
   background-color: #4299e1;
+}
+
+@media screen and (min-width: 41.625rem) {
+  .page {
+    width: 100%;
+    height: 100%;
+    padding: 2.25rem 3.9375rem 4.5625rem 1.4375rem;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sortBar {
+    padding-bottom: 1.0625rem;
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .addBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    text-decoration: none;
+    margin-left: 9.0625rem;
+    padding: 0.5625rem 1.5rem 0.5625rem 0.875rem;
+
+    background: #2a4365;
+    border-radius: 0.3125rem;
+
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.187;
+    color: #fffcfe;
+
+    transition: all 250ms linear;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .page {
+    width: 100%;
+    height: 100%;
+    padding: 2.25rem 3.9375rem 4.5625rem 1.4375rem;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sortBar {
+    padding-bottom: 1.0625rem;
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .addBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    text-decoration: none;
+    margin-left: 9.0625rem;
+    padding: 0.5625rem 1.5rem 0.5625rem 0.875rem;
+
+    background: #2a4365;
+    border-radius: 0.3125rem;
+
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.187;
+    color: #fffcfe;
+
+    transition: all 250ms linear;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .page {
+    width: 100%;
+    height: 100%;
+    padding: 2.25rem 3.9375rem 4.5625rem 1.4375rem;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sortBar {
+    padding-bottom: 1.0625rem;
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .addBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    text-decoration: none;
+    margin-left: 9.0625rem;
+    padding: 0.5625rem 1.5rem 0.5625rem 0.875rem;
+
+    background: #2a4365;
+    border-radius: 0.3125rem;
+
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.187;
+    color: #fffcfe;
+
+    transition: all 250ms linear;
+  }
+}
+
+@media screen and (min-width: 85.375rem) {
+  .page {
+    width: 100%;
+    height: 100%;
+    padding: 2.25rem 3.9375rem 4.5625rem 1.4375rem;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sortBar {
+    padding-bottom: 1.0625rem;
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .addBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+
+    text-decoration: none;
+    margin-left: 9.0625rem;
+    padding: 0.5625rem 1.5rem 0.5625rem 0.875rem;
+
+    background: #2a4365;
+    border-radius: 0.3125rem;
+
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.187;
+    color: #fffcfe;
+
+    transition: all 250ms linear;
+  }
 }
