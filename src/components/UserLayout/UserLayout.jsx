@@ -28,7 +28,7 @@ export const UserLayout = ({ children }) => {
     <Container>
       <UserHeader />
       <div
-        style={isMenuOpen ? { width: '100%', height: '100vh' } : null}
+        style={isMenuOpen ? { width: '100%', height: '100vh' } : { display: 'flex' }}
         onClick={handleBackdropClick}
       >
         <aside>

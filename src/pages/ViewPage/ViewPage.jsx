@@ -80,7 +80,7 @@ export const ViewPage = () => {
         onClick={handleBackdropClick}
       >
         <div className={isFilterMenuOpen ? styles.sortBarOpened : styles.sortBar}>
-          {isMobile || isMobilePlus || isTablet ? (
+          {isMobile || isMobilePlus ? (
             <div className={styles.sortBar__icon} onClick={toggleFilterMenu}>
               {!isFilterMenuOpen && <SortsIcon size={36} />}
             </div>
