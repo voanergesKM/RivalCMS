@@ -19,7 +19,7 @@ export const ViewPage = () => {
 
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
 
-  const { isMobile, isMobilePlus, isTablet } = useMatchMedia();
+  const { isMobile, isMobilePlus } = useMatchMedia();
 
   useEffect(() => {
     dispatch({ type: 'default' });
@@ -79,22 +79,27 @@ export const ViewPage = () => {
         className={styles.page}
         onClick={handleBackdropClick}
       >
-        <div className={isFilterMenuOpen ? styles.sortBarOpened : styles.sortBar}>
-          {isMobile || isMobilePlus ? (
-            <div className={styles.sortBar__icon} onClick={toggleFilterMenu}>
-              {!isFilterMenuOpen && <SortsIcon size={36} />}
-            </div>
-          ) : null}
+        <div
+          className={isFilterMenuOpen ? styles.backdrop : styles.backdropClosed}
+          onClick={handleBackdropClick}
+        >
+          <div className={isFilterMenuOpen ? styles.sortBarOpened : styles.sortBar}>
+            {isMobile || isMobilePlus ? (
+              <div className={styles.sortBar__icon} onClick={toggleFilterMenu}>
+                {!isFilterMenuOpen && <SortsIcon size={36} />}
+              </div>
+            ) : null}
 
-          <FilterBar state={state} handleFilterClick={handleFilterClick} />
+            <FilterBar state={state} handleFilterClick={handleFilterClick} />
 
-          <Link className={styles.addBtn} to="/create">
-            <AddFileIcon size={20} />
-            Add new
-          </Link>
+            <Link className={styles.addBtn} to="/create">
+              <AddFileIcon size={20} />
+              Add new
+            </Link>
+          </div>
         </div>
 
-        {/* {state.pages && <Pagination pages={state.pages} view />} */}
+        {state.pages && <Pagination pages={state.pages} view />}
       </div>
     </UserLayout>
   );

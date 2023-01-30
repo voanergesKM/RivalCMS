@@ -1,3 +1,20 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  /* background-color: #2a4365; */
+}
+
+.backdropClosed {
+  composes: backdrop;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .page {
   position: relative;
 
@@ -35,7 +52,7 @@
 
   transition: all 250ms linear;
 
-  z-index: 10000;
+  z-index: 10;
 }
 
 .sortBar__icon {
@@ -43,11 +60,13 @@
 
   top: 3rem;
   right: -3rem;
-  z-index: 100;
+  z-index: 10;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  pointer-events: all;
 }
 
 .addBtn {
@@ -81,6 +100,12 @@
     padding: 1.25rem 2.9375rem 2.5625rem 1.4375rem;
   }
 
+  .backdrop {
+    position: static;
+
+    pointer-events: all;
+  }
+
   .sortBar {
     position: static;
 
@@ -103,10 +128,16 @@
 
 @media screen and (min-width: 64rem) {
   .page {
-    padding: 2.25rem 3.9375rem 4.5625rem 1.4375rem;
+    padding: 1rem;
   }
 
   .sortBar {
     padding-bottom: 1.0625rem;
+  }
+}
+
+@media screen and (min-width: 85.375rem) {
+  .page {
+    padding: 2.25rem 3.9375rem 4.5625rem 1.4375rem;
   }
 }

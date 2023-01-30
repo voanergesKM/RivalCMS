@@ -62,7 +62,7 @@ export const ViewPageListItem = ({
         {published ? 'Published' : 'Unpublished'}
       </p>
       <User authorName={authorName} isAdmin={isAdmin} />
-      <div style={{ position: 'relative', marginLeft: 'auto' }}>
+      <div className={styles.moreActions}>
         <ActionsMoreBtn toggle={setIsMenuOpen} />
         {isMenuOpen && (
           <DropMenu toggleMenu={setIsMenuOpen} pageId={id} toggleInput={setDisableInput} />

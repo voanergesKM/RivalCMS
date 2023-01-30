@@ -27,47 +27,49 @@ export const UserLayout = ({ children }) => {
   return (
     <Container>
       <UserHeader />
-      <div
-        style={isMenuOpen ? { width: '100%', height: '100vh' } : { display: 'flex' }}
-        onClick={handleBackdropClick}
-      >
-        <aside>
-          <nav className={isMenuOpen ? styles.sidebar__open : styles.sidebar}>
-            {isMobile || isMobilePlus || isTablet ? (
-              <div className={styles.menuIcon} onClick={toggleMenu}>
-                {!isMenuOpen ? <OpenMenuIcon size={36} /> : <CloseMenuIcon size={36} />}
-              </div>
-            ) : null}
-            <p className={styles.sidebar__title}>Manage</p>
-            <ul className={styles.sidebar__list}>
-              {manageList.map(({ href, title, icon: Icon }, index) => (
-                <li className={styles.list__item} key={index}>
-                  <Icon size={24} />
-                  <NavLink
-                    className={() =>
-                      href === location.pathname ? styles.list__linkActive : styles.list__link
-                    }
-                    to={href}
-                  >
-                    {title}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
+      <div style={{ display: 'flex' }}>
+        <div
+          className={isMenuOpen ? styles.backdrop : styles.backdropClosed}
+          onClick={handleBackdropClick}
+        >
+          <aside>
+            <nav className={isMenuOpen ? styles.sidebar__open : styles.sidebar}>
+              {isMobile || isMobilePlus || isTablet ? (
+                <div className={styles.menuIcon} onClick={toggleMenu}>
+                  {!isMenuOpen ? <OpenMenuIcon size={36} /> : <CloseMenuIcon size={36} />}
+                </div>
+              ) : null}
+              <p className={styles.sidebar__title}>Manage</p>
+              <ul className={styles.sidebar__list}>
+                {manageList.map(({ href, title, icon: Icon }, index) => (
+                  <li className={styles.list__item} key={index}>
+                    <Icon size={24} />
+                    <NavLink
+                      className={() =>
+                        href === location.pathname ? styles.list__linkActive : styles.list__link
+                      }
+                      to={href}
+                    >
+                      {title}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
 
-            <p className={styles.sidebar__title}>Pro features</p>
-            <ul className={styles.sidebar__list}>
-              {featureList.map(({ href, title, icon: Icon }, index) => (
-                <li className={styles.list__item} key={index}>
-                  <Icon size={24} />
-                  <NavLink className={styles.list__link} to={href}>
-                    {title}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </aside>
+              <p className={styles.sidebar__title}>Pro features</p>
+              <ul className={styles.sidebar__list}>
+                {featureList.map(({ href, title, icon: Icon }, index) => (
+                  <li className={styles.list__item} key={index}>
+                    <Icon size={24} />
+                    <NavLink className={styles.list__link} to={href}>
+                      {title}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
+        </div>
         <main style={{ width: '100%' }}>{children}</main>
       </div>
     </Container>
