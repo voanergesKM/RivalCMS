@@ -1,23 +1,50 @@
-.sidebar {
+.backdrop {
   position: absolute;
   top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.backdropClosed {
+  composes: backdrop;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
   left: -16rem;
   padding: 4.3rem;
   background-color: #edf2f7;
   width: 16rem;
 
   transition: all 250ms linear;
+  z-index: 10;
+
+  /* overflow-y: scroll; */
 }
 
 .sidebar__open {
   composes: sidebar;
   left: 0;
+
+  z-index: 100;
 }
 
 .menuIcon {
   position: absolute;
   top: 0.625rem;
   right: -3rem;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: all;
 }
 
 .sidebar__title {
@@ -81,9 +108,24 @@
 }
 
 @media screen and (min-width: 64rem) {
+  .backdrop {
+    position: static;
+
+    pointer-events: all;
+  }
+
   .sidebar {
     position: static;
-    width: 18.85rem;
+    width: 14rem;
+
+    padding: 2rem;
     height: 100%;
+  }
+}
+
+@media screen and (min-width: 85.375rem) {
+  .sidebar {
+    padding: 4.3rem;
+    width: 18.85rem;
   }
 }

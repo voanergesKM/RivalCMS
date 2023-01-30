@@ -9,6 +9,7 @@ export const authorizationSlice = createSlice({
       name: 'Wednesday Adams',
       email: 'adams.wd@mail.com',
       password: 'Adams!123wednesday',
+      isAdmin: false,
     },
   ],
 
@@ -17,14 +18,19 @@ export const authorizationSlice = createSlice({
       const id = Date.now();
       const { name, email, password } = action.payload;
 
-      return [...state, { id, name, email, password }];
+      return [...state, { id, name, email, password, isAdmin: false }];
     },
   },
 });
 
 export const signInUserSlice = createSlice({
   name: 'user',
-  initialState: { name: 'Joe Bloggs', email: '', isLoggedIn: false, isAdmin: true },
+  initialState: {
+    name: 'Joe Bloggs',
+    email: '',
+    isLoggedIn: false,
+    isAdmin: true,
+  },
 
   reducers: {
     signInUser(_, action) {

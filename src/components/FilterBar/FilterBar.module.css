@@ -1,8 +1,9 @@
 .filter__list {
   display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding-left: 1rem;
 }
 
 .filter__list__item {
@@ -29,4 +30,26 @@
 .filter__list__btn:hover,
 .filter__list__btn:focus {
   color: #4299e1;
+}
+
+@media screen and (min-width: 48rem) {
+  .filter__list {
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .filter__list {
+    padding-left: 0;
+    margin-right: 1.0625rem;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  .filter__list {
+    margin-right: 9.0625rem;
+  }
 }
