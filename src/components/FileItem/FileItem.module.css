@@ -1,11 +1,14 @@
 .file {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
 
-  padding: 0.6875rem 3.125rem 1.1875rem;
+  padding: 0.6875rem 1.125rem 1.1875rem;
 
   background-color: #f7fafc;
+
+  gap: 1rem;
 }
 
 .file__name {
@@ -35,4 +38,86 @@
   font-size: 1.125rem;
   line-height: 1.167;
   color: #2a4365;
+}
+
+@media screen and (min-width: 48rem) {
+  .file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.6875rem 3.125rem 1.1875rem;
+
+    background-color: #f7fafc;
+  }
+
+  .file__name {
+    border: 1px solid #4299e1;
+    padding: 0.1rem;
+    outline: none;
+    padding: 0;
+
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.167;
+    color: #4299e1;
+  }
+
+  .file__name:disabled {
+    border: none;
+    outline: none;
+    padding: 0;
+
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.167;
+    color: #2a4365;
+  }
+
+  .file__uploaded {
+    font-size: 1.125rem;
+    line-height: 1.167;
+    color: #2a4365;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.6875rem 3.125rem 1.1875rem;
+
+    background-color: #f7fafc;
+  }
+
+  .file__name {
+    border: 1px solid #4299e1;
+    padding: 0.1rem;
+    outline: none;
+    padding: 0;
+
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.167;
+    color: #4299e1;
+  }
+
+  .file__name:disabled {
+    border: none;
+    outline: none;
+    padding: 0;
+
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.167;
+    color: #2a4365;
+  }
+
+  .file__uploaded {
+    font-size: 1.125rem;
+    line-height: 1.167;
+    color: #2a4365;
+  }
 }

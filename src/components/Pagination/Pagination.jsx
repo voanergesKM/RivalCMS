@@ -38,7 +38,7 @@ function Pagination({ pages, view = false, files = false }) {
   return (
     <>
       {files && (
-        <ul style={{ flexGrow: 1 }}>
+        <ul className={styles.fileList}>
           {pages &&
             pages
               .slice(firstContentIndex, lastContentIndex)
@@ -55,7 +55,7 @@ function Pagination({ pages, view = false, files = false }) {
         </ul>
       )}
 
-      {totalPages > 0 && (
+      {pages.length > 5 && (
         <div className={styles.paginationContainer}>
           <button onClick={prevPage} className={page === 1 ? 'hidden' : styles.paginationItem}>
             &larr;

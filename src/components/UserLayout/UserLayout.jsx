@@ -32,7 +32,7 @@ export const UserLayout = ({ children }) => {
           className={isMenuOpen ? styles.backdrop : styles.backdropClosed}
           onClick={handleBackdropClick}
         >
-          <aside>
+          <aside style={isMenuOpen ? null : { height: '100%' }}>
             <nav className={isMenuOpen ? styles.sidebar__open : styles.sidebar}>
               {isMobile || isMobilePlus || isTablet ? (
                 <div className={styles.menuIcon} onClick={toggleMenu}>
