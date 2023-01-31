@@ -134,7 +134,8 @@ export const FilesPage = () => {
             flexGrow: '1',
           }}
         >
-          <Pagination pages={filteredFile} files />
+          {filteredFile.length === 0 && <h1 className="emptyTable">No files added yet!</h1>}
+          {filteredFile && <Pagination pages={filteredFile} files />}
         </div>
       </div>
     </UserLayout>
