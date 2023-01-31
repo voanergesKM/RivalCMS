@@ -29,30 +29,30 @@ export const ViewPage = () => {
     switch (type) {
       case 'pageName':
         if (sortBy !== 'pageName') {
-          return ascendingSort(pages, 'pageName', 'pageName');
+          return ascendingSort(pages, 'pageName');
         } else if (sortBy === 'pageName' && direction === 'asc') {
-          return descendingSort(pages, 'pageName', 'pageName');
+          return descendingSort(pages, 'pageName');
         } else return initialState;
 
       case 'created':
         if (sortBy !== 'created') {
-          return ascendingSort(pages, 'created', 'created');
+          return ascendingSort(pages, 'created');
         } else if (sortBy === 'created' && direction === 'asc') {
-          return descendingSort(pages, 'created', 'created');
+          return descendingSort(pages, 'created');
         } else return initialState;
 
       case 'published':
         if (sortBy !== 'published') {
-          return ascendingSort(pages, 'published', 'published');
+          return ascendingSort(pages, 'published');
         } else if (sortBy === 'published' && direction === 'asc') {
-          return descendingSort(pages, 'published', 'published');
+          return descendingSort(pages, 'published');
         } else return initialState;
 
       case 'authorName':
         if (sortBy !== 'authorName') {
-          return ascendingSort(pages, 'authorName', 'authorName');
+          return ascendingSort(pages, 'authorName');
         } else if (sortBy === 'authorName' && direction === 'asc') {
-          return descendingSort(pages, 'authorName', 'authorName');
+          return descendingSort(pages, 'authorName');
         } else return initialState;
 
       default:
@@ -77,7 +77,6 @@ export const ViewPage = () => {
       <div
         style={isFilterMenuOpen ? { width: '100%', height: '100vh' } : null}
         className={styles.page}
-        onClick={handleBackdropClick}
       >
         <div
           className={isFilterMenuOpen ? styles.backdrop : styles.backdropClosed}
@@ -98,6 +97,8 @@ export const ViewPage = () => {
             </Link>
           </div>
         </div>
+
+        {pages.length === 0 && <h1 className="emptyTable">No files added yet!</h1>}
 
         {state.pages && <Pagination pages={state.pages} view />}
       </div>

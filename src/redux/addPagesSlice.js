@@ -154,15 +154,6 @@ export const pageSlice = createSlice({
       return state.filter(page => page.id !== action.payload);
     },
 
-    // onSortPages(state, { payload }) {
-    //   return state.sort((prevPage, nextPage) => {
-    //     if (payload === 'created' || payload === 'published') {
-    //       return prevPage[payload] > nextPage[payload] ? -1 : 1;
-    //     }
-    //     return prevPage[payload] > nextPage[payload] ? 1 : -1;
-    //   });
-    // },
-
     onRenamePage(state, action) {
       for (const page of state) {
         if (page.id === action.payload.id) {

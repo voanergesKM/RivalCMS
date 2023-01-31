@@ -1,14 +1,14 @@
-export const ascendingSort = (pages, sortBy, type) => {
+export const ascendingSort = (pages, sortBy) => {
   return {
-    pages: pages.sort((prev, next) => (prev[type] > next[type] ? 1 : -1)),
+    pages: pages.sort((prev, next) => (prev[sortBy] > next[sortBy] ? 1 : -1)),
     sortBy,
     direction: 'asc',
   };
 };
 
-export const descendingSort = (pages, sortBy, type) => {
+export const descendingSort = (pages, sortBy) => {
   return {
-    pages: pages.sort((prev, next) => (prev[type] > next[type] ? -1 : 1)),
+    pages: pages.sort((prev, next) => (prev[sortBy] > next[sortBy] ? -1 : 1)),
     sortBy,
     direction: 'desc',
   };
