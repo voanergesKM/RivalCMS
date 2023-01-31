@@ -25,12 +25,7 @@ export const authorizationSlice = createSlice({
 
 export const signInUserSlice = createSlice({
   name: 'user',
-  initialState: {
-    name: 'Joe Bloggs',
-    email: '',
-    isLoggedIn: false,
-    isAdmin: true,
-  },
+  initialState: {},
 
   reducers: {
     signInUser(_, action) {
