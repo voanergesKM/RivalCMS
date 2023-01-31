@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { SearchIcon } from '../../assets/icons/SvgIcons';
 import Pagination from '../../components/Pagination/Pagination';
 import { UserLayout } from '../../components/UserLayout/UserLayout';
+import { useClick } from '../../hooks/useClick';
 import { addSiteFiles } from '../../redux/filesSlice';
 import styles from './FilesPage.module.css';
 
@@ -15,13 +16,15 @@ const types = [
 ];
 
 export const FilesPage = () => {
+  const [inputRef, handleInputClick] = useClick();
+
   const siteFiles = useSelector(state => state.siteFiles);
   const [search, setSearch] = useState('');
-  const [searchParams, setSearchParams] = useSearchParams();
-
   const [activeFilterBtn, setActiveFilterBtn] = useState(null);
   const [searchedFiles, setSearchedFiles] = useState(siteFiles);
   const [filteredFile, setFilteredFile] = useState(searchedFiles);
+
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     setSearchedFiles(
@@ -39,8 +42,6 @@ export const FilesPage = () => {
   });
 
   const dispatch = useDispatch();
-
-  const fileInput = useRef();
 
   const handleFileChange = evt => {
     const filesData = [...evt.target.files];
@@ -73,7 +74,7 @@ export const FilesPage = () => {
     <UserLayout>
       <div className={styles.container}>
         <div
-          onClick={() => fileInput.current.click()}
+          onClick={handleInputClick}
           onDragStart={handleDrag}
           onDragLeave={handleDrag}
           onDragOver={handleDrag}
@@ -90,7 +91,7 @@ export const FilesPage = () => {
           </div>
 
           <input
-            ref={fileInput}
+            ref={inputRef}
             onChange={handleFileChange}
             className="hidden"
             type="file"

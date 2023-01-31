@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './CreatePage.module.css';
 import { EditIcon, EyeIcon, PlusIcon } from '../../assets/icons/SvgIcons';
 import { UserLayout } from '../../components/UserLayout/UserLayout';
@@ -8,8 +8,11 @@ import { addSitePage } from '../../redux/addPagesSlice';
 import { useFormik } from 'formik';
 import { pageNameSchema } from '../../components/Form/Validation';
 import { ValidationErrorMessage } from '../../components/ValidationErrorMessage';
+import { useClick } from '../../hooks/useClick';
 
 export const CreatePage = () => {
+  const [inputRef, handleInputClick] = useClick();
+
   const [selectedFile, setSelectedFile] = useState(null);
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const [isPageNameInputDisabled, setIsPageNameInputDisabled] = useState(true);
@@ -18,8 +21,6 @@ export const CreatePage = () => {
   const pages = useSelector(state => state.sitePages);
 
   const dispatch = useDispatch();
-
-  const fileInput = useRef();
 
   const handleSubmit = (values, actions) => {
     if (!selectedFile) {
@@ -154,21 +155,21 @@ export const CreatePage = () => {
           </div>
         </div>
         <div
-          onClick={() => fileInput.current.click()}
-          className={styles.upload}
+          onClick={handleInputClick}
           onDragStart={handleDrag}
           onDragLeave={handleDrag}
           onDragOver={handleDrag}
           onDrop={handleDrop}
+          className={styles.upload}
         >
-          <button type="button" className={styles.upload__actions} disabled>
+          <button type="button" className={styles.upload__actions}>
             <PlusIcon size={24} /> Add new section
           </button>
           <input
-            accept=".html"
-            ref={fileInput}
-            className="hidden"
+            ref={inputRef}
             onChange={handleFileChange}
+            accept=".html"
+            className="hidden"
             type="file"
           />
         </div>
