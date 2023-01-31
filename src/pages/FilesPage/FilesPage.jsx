@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import { SearchIcon } from '../../assets/icons/SvgIcons';
 import Pagination from '../../components/Pagination/Pagination';
 import { UserLayout } from '../../components/UserLayout/UserLayout';
@@ -16,6 +17,7 @@ const types = [
 export const FilesPage = () => {
   const siteFiles = useSelector(state => state.siteFiles);
   const [search, setSearch] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [activeFilterBtn, setActiveFilterBtn] = useState(null);
   const [searchedFiles, setSearchedFiles] = useState(siteFiles);
@@ -31,6 +33,10 @@ export const FilesPage = () => {
     setActiveFilterBtn(null);
     setFilteredFile(searchedFiles);
   }, [searchedFiles]);
+
+  useEffect(() => {
+    if (!searchParams.get('page')) setSearchParams({ page: '1' });
+  });
 
   const dispatch = useDispatch();
 

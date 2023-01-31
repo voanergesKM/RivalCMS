@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useReducer } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { AddFileIcon, SortsIcon } from '../../assets/icons/SvgIcons';
 import { FilterBar } from '../../components/FilterBar/FilterBar';
 import Pagination from '../../components/Pagination/Pagination';
@@ -17,6 +17,8 @@ export const ViewPage = () => {
   const initialState = { pages: [...pages], sortBy: '', direction: 'default' };
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
 
   const { isMobile, isMobilePlus } = useMatchMedia();
@@ -24,6 +26,10 @@ export const ViewPage = () => {
   useEffect(() => {
     dispatch({ type: 'default' });
   }, [pages]);
+
+  useEffect(() => {
+    if (!searchParams.get('page')) setSearchParams({ page: '1' });
+  });
 
   function reducer({ pages, sortBy, direction }, { type }) {
     switch (type) {
